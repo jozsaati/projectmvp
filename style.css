@@ -1,70 +1,120 @@
-:root{
-  --bg:#f5f5f7;
-  --card:#ffffff;
-  --muted:#6e6e73;
-  --accent:#0071e3;
-  --success:#30d158;
-  --warning:#ffd60a;
-  --danger:#ff3b30;
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
 }
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background:var(--bg);
-  color:#1d1d1f;
-  -webkit-font-smoothing:antialiased;
-  padding-bottom:40px;
+
+body {
+  margin: 0;
+  background: #f5f5f7;
+  color: #1d1d1f;
 }
-.header{
-  background:rgba(255,255,255,0.7);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid #e6e6ea;
-  padding:14px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+
+/* HEADER */
+.header {
+  padding: 14px 18px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5ea;
 }
-.brand { font-weight:700; font-size:18px; color:#111; text-decoration:none; }
-.actions { display:flex; gap:10px; align-items:center; }
+
+.brand {
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+}
+
+/* LAYOUT */
+.container {
+  max-width: 900px;
+  padding: 16px;
+  margin: auto;
+}
+
+.card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 14px;
+}
+
+/* REPORT */
+.report {
+  padding: 14px;
+  border-radius: 12px;
+  background: #f9f9fb;
+  margin-top: 14px;
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* STATUS */
+.status {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.s-uj { background:#e5f0ff; color:#007aff; }
+.s-folyamatban { background:#fff4e5; color:#ff9500; }
+.s-befejezve { background:#e5f9ee; color:#34c759; }
+
+/* FORM */
+.controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.input {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #d1d1d6;
+}
+
+/* BUTTONS */
 .btn {
-  background:var(--accent);
-  color:white;
-  padding:8px 14px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:600;
-  border:0;
-  cursor:pointer;
+  padding: 9px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #007aff;
+  color: #fff;
+  cursor: pointer;
 }
+
+.btn-danger {
+  background: #ff3b30;
+}
+
 .btn-ghost {
-  background:transparent;
-  color:var(--accent);
-  border:1px solid rgba(0,0,0,0.06);
-  padding:7px 12px;
-  border-radius:10px;
+  text-decoration: none;
+  color: #007aff;
+  margin-right: 10px;
 }
-.container{ max-width:980px; margin:28px auto; padding:0 16px; }
-.card{
-  background:var(--card);
-  padding:18px;
-  border-radius:14px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.04);
-  margin-bottom:18px;
-}
-.form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.input, textarea, select{ width:100%; padding:10px 12px; border-radius:10px; border:1px solid #e6e6ea; font-size:15px; }
-textarea{ min-height:110px; resize:vertical; }
-.report { border-left:6px solid rgba(0,0,0,0.06); padding:14px; border-radius:10px; margin-bottom:12px; background:linear-gradient(180deg, #fff, #fbfbfd); }
-.meta { color:var(--muted); font-size:13px; margin-top:8px; display:flex; gap:10px; align-items:center; }
-.status { padding:6px 10px; border-radius:999px; font-weight:700; font-size:13px; display:inline-block; }
-.s-uj { background: #dbeafe; color: #075985; }
-.s-folyamatban { background: var(--warning); color:#1f1f1f; }
-.s-befejezve { background: var(--success); color:white; }
-.controls { margin-top:12px; display:flex; gap:8px; }
-.small { font-size:13px; color:var(--muted); }
-.footer-note{ text-align:center; color:var(--muted); margin-top:20px; font-size:14px; }
-@media (max-width:700px){
-  .form-grid { grid-template-columns:1fr; }
-  .actions { gap:6px; }
+
+/* 📱 MOBILE */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .report-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .btn, .input {
+    width: 100%;
+  }
 }
